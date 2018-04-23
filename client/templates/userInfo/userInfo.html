@@ -1,0 +1,41 @@
+<template name="userInfo">
+    <div class="container">
+        <div class="col-lg-12 col-md-10">  
+        {{#with user}}  
+
+        <h2 class="sub-header">User Details</h2>
+        <p>Here you can see all users details</p>       
+        <ul>
+            <li>{{_id}}</li>
+            <li>{{login}}</li>
+            <li>{{password}}</li>
+            <li>{{firstName}}</li>
+            <li>{{lastName}}</li>
+            <li>{{birthDate}}</li>
+            <li>{{listType}}</li>
+            <li>{{createdAt}}</li>
+        </ul>       
+        
+        {{#autoForm collection="SysUsers" doc=this id="updateUserForm" type="update"}}
+            <fieldset>
+              <legend>Edit User details</legend>
+              {{> afQuickField name='login'}}
+              {{> afQuickField name='password'}}
+              {{> afQuickField name='firstName'}}
+              {{> afQuickField name='lastName'}}
+              {{> afQuickField name='birthDate'}}
+              {{> afQuickField name='listType'}}
+            </fieldset>
+
+            <div class="btn-group pull-right" role="group" aria-label="UI buttons">
+                <button type="submit" class="btn btn-primary">Delete User</button>
+                <button type="submit" class="btn btn-primary">Update User</button>	
+                <button type="button" class="btn btn-primary">Cancel</button>
+            </div>	
+
+        {{/autoForm}}
+
+        {{/with}}	        
+        </div>
+    </div>
+</template>

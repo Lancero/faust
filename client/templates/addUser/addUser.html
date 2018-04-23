@@ -1,0 +1,25 @@
+<template name="addUser">
+    <div class="container">
+        <div class="col-lg-12 col-md-10">           
+           
+        {{#autoForm collection="SysUsers" id="insertUserForm" type="insert"}}
+            <fieldset>
+                <legend>Add User</legend>
+                {{> afQuickField name='login'}}
+                {{> afQuickField name='password'}}
+                {{> afQuickField name='firstName'}}
+                {{> afQuickField name='lastName'}}
+                {{> afQuickField name='birthDate'}}
+                <label>Group</label>
+                <select class="form-control"  id="userGroupSelect" name='userGroupSelect'>
+                    <option disabled="disabled">Please Select</option>
+                    {{#each groups}}
+                        <option value="{{groupName}}" >{{groupName}}</option>
+                    {{/each}}
+                </select>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Insert</button>
+        {{/autoForm}}                  
+        </div>
+    </div>	
+</template>

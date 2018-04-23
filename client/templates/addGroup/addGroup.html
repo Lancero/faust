@@ -1,0 +1,21 @@
+<template name="addGroup">
+    <div class="container">
+        <div class="col-lg-12 col-md-10">           
+            
+        {{#autoForm collection="Groups" id="insertGroupsForm" type="insert"}}
+            <fieldset>
+                <legend>Create new list</legend>
+              {{> afQuickField name='groupName'}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Insert</button>
+        {{/autoForm}}                  
+        </div>
+        <div class="col-lg-12 col-md-10"> 
+            <ul>
+                {{#each groups}}
+                <li style="padding: 15px 0;">{{groupName}} <button type="button" class="btn btn-primary deleteGroup pull-right"><i class="glyphicon glyphicon-trash"></i> Delete</button></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>	
+</template>

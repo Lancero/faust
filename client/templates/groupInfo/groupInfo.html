@@ -1,0 +1,36 @@
+<template name="groupInfo">
+    <div class="container">
+        <div class="col-lg-12 col-md-10">  
+        {{#with group}}  
+
+        <h2 class="sub-header">Group Details</h2>
+        <p>Here you can see all members of {{groupName}} group</p>       
+        <ul>
+            <li>{{_id}}</li>
+            <li>{{sysUsersId}}</li>
+
+            <li>{{createdAt}}</li>
+
+            users:
+            {{#each user}}
+                <li>{{login}}</li>
+            {{/each}} 
+            
+        </ul>              
+        {{/with}}
+
+
+<!-- 
+            {{#each user}}
+                <li>1{{login}}</li>
+            {{/each}}   -->
+
+            
+        
+        
+        </div>
+    </div>
+</template>
+
+
+        
