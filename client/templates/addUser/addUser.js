@@ -20,8 +20,8 @@ Template.addUser.events({
                     //console.log(this.docId)                                            
                     //let chosenList2 = event.target.userGroupSelect.value;
 
-                //console.log(chosenList);
-                //console.log(chosenList2)
+                    //console.log(chosenList);
+                    //console.log(chosenList2)
                 
 
                 let listId = Groups.findOne({groupName: chosenList})._id; // Id wybranej listy
