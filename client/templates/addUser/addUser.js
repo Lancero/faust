@@ -24,7 +24,7 @@ Template.addUser.events({
                     //console.log(chosenList2)
                 
 
-                let listId = Groups.findOne({groupName: chosenList})._id; // Id wybranej listy
+                let listId = Groups.findOne({groupName: chosenList})//._id; // Id wybranej listy
 
                 console.log(listId);
 
