@@ -14,9 +14,60 @@
             <li>{{birthDate}}</li>
             <li>{{listType}}</li>
             <li>{{createdAt}}</li>
+            <li>{{lastModified}}</li>
         </ul>       
         
-        {{#autoForm collection="SysUsers" doc=this id="updateUserForm" type="update"}}
+
+        <!-- EDIT FORM -->
+
+        <form id='editUserForm'>
+            <div class="row">
+                <div class="col-md-6 form-group">                        
+                    <label>Login</label>
+                    <input type="text" class="form-control" id="userLogin" name="userLogin" value='{{login}}'>                        
+                </div>
+                <div class="col-md-6 form-group">                        
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="userPassword" name="userPassword" value="{{password}}">                        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" id="userFirstName" name="userFirstName" value="{{firstName}}">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" id="userLastName" name="userLastName" value="{{lastName}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>Birth Date</label>
+                    <input type="date" class="form-control" id="userBirthDate" name="userBirthDate" value="{{birthDate}}">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Group</label>
+                    <select class="form-control"  id="userListSelect" name='userListSelect'>
+                        <option selected>Default</option>
+                        <option disabled="disabled">Please Select</option>                            
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group pull-right" role="group" aria-label="UI buttons">
+                        <button type="submit" id='deleteUserBtn' class="btn btn-primary">Delete User</button>
+                        <button type="submit" id='editUserBtn' class="btn btn-primary">Update User</button>	
+                        <button type="button" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>                                    
+            </div>                                                
+        </form> 
+
+
+
+        <!-- {{#autoForm collection="SysUsers" doc=this id="updateUserForm" type="update"}}
             <fieldset>
               <legend>Edit User details</legend>
               {{> afQuickField name='login'}}
@@ -33,7 +84,7 @@
                 <button type="button" class="btn btn-primary">Cancel</button>
             </div>	
 
-        {{/autoForm}}
+        {{/autoForm}} -->
 
         {{/with}}	        
         </div>

@@ -1,25 +1,71 @@
 <template name="addUser">
     <div class="container">
-        <div class="col-lg-12 col-md-10">           
-           
-        {{#autoForm collection="SysUsers" id="insertUserForm" type="insert"}}
-            <fieldset>
-                <legend>Add User</legend>
-                {{> afQuickField name='login'}}
-                {{> afQuickField name='password'}}
-                {{> afQuickField name='firstName'}}
-                {{> afQuickField name='lastName'}}
-                {{> afQuickField name='birthDate'}}
-                <label>Group</label>
-                <select class="form-control"  id="userGroupSelect" name='userGroupSelect'>
-                    <option disabled="disabled">Please Select</option>
-                    {{#each groups}}
-                        <option value="{{groupName}}" >{{groupName}}</option>
-                    {{/each}}
-                </select>
-            </fieldset>
-            <button type="submit" class="btn btn-primary">Insert</button>
-        {{/autoForm}}                  
+        <div class="col-lg-12 col-md-10" style='margin-top: 20px;'>           
+            <form id='addUserForm'>
+                <div class="row">
+                    <div class="col-md-6 form-group">                        
+                        <label>Login</label>
+                        <input type="text" class="form-control" id="userLogin" name="userLogin" placeholder="">                        
+                    </div>
+                    <div class="col-md-6 form-group">                        
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="">                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" id="userFirstName" name="userFirstName" placeholder="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" id="userLastName" name="userLastName" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Birth Date</label>
+                        <input type="date" class="form-control" id="userBirthDate" name="userBirthDate" placeholder="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Group</label>
+                        <select class="form-control"  id="userListSelect" name='userListSelect'>
+                            <option selected>Default</option>
+                            <option disabled="disabled">Please Select</option>                            
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" id='createNewUserBtn' class="btn btn-primary">Create New User</button>
+                    </div>                    
+                </div>                                                
+            </form>                
         </div>
+        
+        
+        <!-- OLD VERSION -->
+
+        <div class="col-lg-12 col-md-10 hidden">           
+           
+                {{#autoForm collection="SysUsers" id="insertUserForm" type="insert"}}
+                    <fieldset>
+                        <legend>Add User</legend>
+                        {{> afQuickField name='login'}}
+                        {{> afQuickField name='password'}}
+                        {{> afQuickField name='firstName'}}
+                        {{> afQuickField name='lastName'}}
+                        {{> afQuickField name='birthDate'}}
+                        <label>Group</label>
+                        <select class="form-control"  id="userGroupSelect" name='userGroupSelect'>
+                            <option disabled="disabled">Please Select</option>
+                            {{#each groups}}
+                                <option value="{{groupName}}" >{{groupName}}</option>
+                            {{/each}}
+                        </select>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Insert</button>
+                {{/autoForm}}                  
+                </div>
     </div>	
 </template>

@@ -18,20 +18,20 @@ Template.addUser.events({
                 insert: function(error, result){
                     console.log('after insert');
                     //console.log(this.docId)                                            
-                    //let chosenList2 = event.target.userGroupSelect.value;
+                    let chosenList2 = event.target.userGroupSelect.value;
 
                     //console.log(chosenList);
                     //console.log(chosenList2)
                 
 
-                let listId = Groups.findOne({groupName: chosenList})//._id; // Id wybranej listy
+                let listId = Groups.findOne({groupName: chosenList2})._id; // Id wybranej listy
 
                 console.log(listId);
 
                 //Groups.update({_id: listId},{$set:{sysUsersId: this.docId}});
                 
 
-                console.log(this.docId);
+                //console.log(this.docId);
 
                 Groups.update(
                     {_id: listId},
@@ -45,5 +45,33 @@ Template.addUser.events({
             }
         };
         AutoForm.addHooks('insertUserForm',hooksObject);
-    }  
+    },
+    'submit #addUserForm': function(event){
+        let userLogin = event.target.userLogin.value;
+        let userPassword = event.target.userPassword.value;
+        let userFirstName = event.target.userFirstName.value;
+        let userLastName = event.target.userLastName.value;
+        let userBirthDate = event.target.userBirthDate.value;
+        let userList = event.target.userListSelect.value;
+
+        // Insert
+        AppUsers.insert({
+            login: userLogin,
+            password: userPassword,
+            firstName: userFirstName,
+            lastName: userLastName,
+            birthDate: userBirthDate,
+            createdAt: new Date()
+        });
+
+        // Clear form
+        event.target.userLogin.value = '';
+        event.target.userPassword.value = '';
+        event.target.userFirstName.value = '';
+        event.target.userLastName.value = '';
+        event.target.userBirthDate.value = '';
+        event.target.userListSelect.value = '';
+
+        return false
+    }
 });
