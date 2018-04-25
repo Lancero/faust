@@ -16,9 +16,6 @@
             <li>{{createdAt}}</li>
             <li>{{lastModified}}</li>
         </ul>       
-        
-
-        <!-- EDIT FORM -->
 
         <form id='editUserForm'>
             <div class="row">
@@ -49,8 +46,10 @@
                 <div class="col-md-6 form-group">
                     <label>Group</label>
                     <select class="form-control"  id="userListSelect" name='userListSelect'>
-                        <option selected>Default</option>
-                        <option disabled="disabled">Please Select</option>                            
+                        <option selected>{{myGroup.name}}</option>
+                        {{#each group}}
+                            <option value="{{_id}}">{{name}}</option> 
+                        {{/each}}
                     </select>
                 </div>
             </div>

@@ -2,6 +2,13 @@ Template.userInfo.helpers({
 	user: ()=>{
         let appUserId = FlowRouter.getParam('id');        
 		return AppUsers.findOne({_id: appUserId});
+    },
+    myGroup: ()=>{
+        let appUserId = FlowRouter.getParam('id');
+        return AppGroups.findOne({users: appUserId});
+    },
+    group: ()=>{
+        return AppGroups.find();
     }
 });
 
@@ -23,6 +30,7 @@ Template.userInfo.events({
                 firstName: userFirstName,
                 lastName: userLastName,
                 birthDate: userBirthDate,
+                
                 lastModified: new Date()
             }
         });

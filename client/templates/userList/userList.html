@@ -9,15 +9,17 @@
                 <th>Login</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Group</th>
             </tr>
             </thead>
             <tbody>
                 {{#each appusers}}
                 <tr>
-                    <td>{{_id}}</td>
+                    <td></td>
                     <td>{{login}}</td>
                     <td>{{firstName}}</td>
                     <td>{{lastName}}</td>
+                    <td></td>
                     <td><a href="/user/{{_id}}" class="btn btn-primary more pull-right">Więcej</a></td>
                     <td><button type="button" class="btn btn-primary deleteUser"><i class="glyphicon glyphicon-trash"></i> Delete</button></td>
                 </tr>
