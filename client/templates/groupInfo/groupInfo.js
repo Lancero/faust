@@ -1,20 +1,21 @@
 Template.groupInfo.helpers({
 	group: ()=>{
-        let groupUserId = FlowRouter.getParam('id');     // ID           
+        let groupUserId = FlowRouter.getParam('id');     // ID Grupy       
 
-	 	return Groups.findOne({_id: groupUserId});       // Grupa o podanym ID
+	 	return AppGroups.findOne({_id: groupUserId});       // Grupa o podanym ID
     },
     user: ()=>{
         let groupUserId = FlowRouter.getParam('id');
-        let usersArr = Groups.findOne({_id: groupUserId}).sysUsersId;
+
+        let usersArr = AppGroups.findOne({_id: groupUserId}).sysUsersId;
 
         // let usersMap = Groups.map(function(item){
         //     return item.id;
         // });
         console.log(groupUserId); // ID Grupy
         //console.log(usersArr);
-        console.log(Groups.findOne(groupUserId).sysUsersId); // ID usera z podanej grupy
-        console.log(Groups.findOne(groupUserId)); 
+        //console.log(Groups.findOne(groupUserId).sysUsersId); // ID usera z podanej grupy
+        //console.log(Groups.findOne(groupUserId)); 
         //console.log(sysUsersId);
 
         // return SysUsers.find({

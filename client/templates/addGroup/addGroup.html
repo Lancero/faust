@@ -1,6 +1,22 @@
 <template name="addGroup">
     <div class="container">
-        <div class="col-lg-12 col-md-10">           
+        <div class="col-lg-12 col-md-10">
+            <form id='addGroupForm'>
+                <div class="row">
+                    <div class="col-md-12 form-group">                        
+                        <label>Group Name</label>
+                        <input type="text" class="form-control" id="groupName" name="groupName" placeholder="">                        
+                    </div>                            
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" id='createNewGroupBtn' class="btn btn-primary">Create New Group</button>
+                    </div>                    
+                </div>                                                
+            </form>
+        </div>
+        <div class="col-lg-12 col-md-10 hidden">           
             
         {{#autoForm collection="Groups" id="insertGroupsForm" type="insert"}}
             <fieldset>
@@ -13,7 +29,7 @@
         <div class="col-lg-12 col-md-10"> 
             <ul>
                 {{#each groups}}
-                <li style="padding: 15px 0;">{{groupName}} <button type="button" class="btn btn-primary deleteGroup pull-right"><i class="glyphicon glyphicon-trash"></i> Delete</button></li>
+                <li style="padding: 15px 0;">{{name}} <button type="button" class="btn btn-primary deleteGroup pull-right"><i class="glyphicon glyphicon-trash"></i> Delete</button></li>
                 {{/each}}
             </ul>
         </div>

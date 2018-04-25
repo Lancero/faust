@@ -1,15 +1,30 @@
 Template.addGroup.helpers({
     groups: function(){
-      return Groups.find();
+      return AppGroups.find();
     }
 });
 Template.addGroup.events({
 	'click .deleteGroup': function(event){				
 		if(confirm('Do you really wanto to delete this group?')){
-			let groupId = this._id;
-            Groups.remove(this._id);
+			let appGroupId = this._id;
+            AppGroups.remove(this._id);
 
 			return false
 		}
-  }
+    },
+    'submit #addGroupForm': function(event){
+        let groupName = event.target.groupName.value;
+        let createdAt = new Date();
+        let usersArr = [];
+
+        AppGroups.insert({
+            name: groupName,
+            users: usersArr,
+            createdAt: createdAt
+        });
+
+        event.target.groupName.value = '';
+
+        return false
+    }
 });

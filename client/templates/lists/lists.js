@@ -1,6 +1,6 @@
 Template.lists.helpers({
     groups: function(){
-      return Groups.find();
+      return AppGroups.find();
     },
     groupUsers: function(){
         return SysUsers.find();
@@ -18,7 +18,7 @@ Template.lists.events({
     'click .deleteGroup': function(event){				
 		if(confirm('Do you really wanto to delete this group?')){
 			let groupId = this._id;
-            Groups.remove(this._id);
+            AppGroups.remove(this._id);
 
 			return false
 		}

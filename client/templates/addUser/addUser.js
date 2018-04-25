@@ -1,6 +1,6 @@
 Template.addUser.helpers({
     groups: function(){
-        return Groups.find();
+        return AppGroups.find();
     }
 });
 Template.addUser.events({
@@ -23,13 +23,11 @@ Template.addUser.events({
                     //console.log(chosenList);
                     //console.log(chosenList2)
                 
-
                 let listId = Groups.findOne({groupName: chosenList2})._id; // Id wybranej listy
 
                 console.log(listId);
 
-                //Groups.update({_id: listId},{$set:{sysUsersId: this.docId}});
-                
+                //Groups.update({_id: listId},{$set:{sysUsersId: this.docId}});               
 
                 //console.log(this.docId);
 
@@ -64,6 +62,19 @@ Template.addUser.events({
             createdAt: new Date()
         });
 
+        // Update Groups DB
+
+        let groupId = AppGroups.findOne({name: userList});
+
+        console.log(userList);
+        console.log(groupId);
+
+        AppGroups.update({_id: groupId},{
+            $push: {
+                test: '12345'
+            }
+        })
+
         // Clear form
         event.target.userLogin.value = '';
         event.target.userPassword.value = '';
@@ -71,7 +82,7 @@ Template.addUser.events({
         event.target.userLastName.value = '';
         event.target.userBirthDate.value = '';
         event.target.userListSelect.value = '';
-
+       
         return false
     }
 });
