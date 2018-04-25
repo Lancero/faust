@@ -64,7 +64,7 @@ Template.addUser.events({
 
         // Update Groups DB
 
-        let groupId = AppGroups.findOne({name: userList});
+        let groupId = AppGroups.findOne({name: userList})._id;
 
         console.log(userList);
         console.log(groupId);
