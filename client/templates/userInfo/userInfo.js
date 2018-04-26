@@ -30,11 +30,14 @@ Template.userInfo.events({
                 firstName: userFirstName,
                 lastName: userLastName,
                 birthDate: userBirthDate,
-                
+
                 lastModified: new Date()
             }
         });
 
+        // Route
+        FlowRouter.go('/users-list');
+        
         return false
     }
 });

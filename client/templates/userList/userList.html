@@ -23,8 +23,12 @@
                     <td><a href="/user/{{_id}}" class="btn btn-primary more pull-right">Więcej</a></td>
                     <td><button type="button" class="btn btn-primary deleteUser"><i class="glyphicon glyphicon-trash"></i> Delete</button></td>
                 </tr>
-                {{/each}}                
-            </tbody>
+                {{/each}}                                                   
+            </tbody>           
         </table>
+
+        {{#each group}}
+            {{_id}}-{{name}}
+        {{/each}}
     </div>	
 </template>

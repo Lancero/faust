@@ -1,10 +1,10 @@
 Template.userList.helpers({
-    sysusers: function(){
-      return SysUsers.find();
-    },
     appusers: function(){
       return AppUsers.find();
-    }
+    },
+    group: ()=>{
+      return AppGroups.find();
+    }    
 });
 
 

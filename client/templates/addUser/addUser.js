@@ -38,6 +38,9 @@ Template.addUser.events({
         event.target.userBirthDate.value = '';
         event.target.userListSelect.value = '';
        
-        return false
+        // Route
+        FlowRouter.go('/users-list');
+
+        return false        
     }
 });
