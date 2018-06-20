@@ -4,8 +4,10 @@
 
     <ul>
         {{#each groups}}
-        <li style='padding: 15px 0;'>{{name}} <span class="pull-right"><a href="/group/{{_id}}" class="btn btn-primary more ">Więcej</a><button type="button" class="btn btn-primary deleteGroup"><i class="glyphicon glyphicon-trash"></i> Delete</button></span>
-            </li>
+        <li style='padding: 15px 0;'>{{name}} <span class="pull-right"><a href="/group/{{_id}}" class="btn btn-primary more ">Więcej</a>
+            <button type="button" class="btn btn-primary deleteGroup"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+            </span>
+        </li>
         {{/each}}
     </ul>
 </template>

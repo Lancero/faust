@@ -1,12 +1,12 @@
 <template name='MainLayout'>
 	{{> navbar}}
-	<div class="container-fluid" style="margin-top: 50px;">
+	<div id='main-container' class="container-fluid">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-2 pl-0">
 				{{> sidebar}}				
 			</div>
 
-			<div class="col-md-8">
+			<div class="col-8">
 				<main>
 					{{> flashMessages}}																							
 					{{> Template.dynamic template=main}}												

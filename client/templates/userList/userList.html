@@ -1,34 +1,32 @@
 <template name='userList'>
-    <h2 class="sub-header">Users List</h2>
+    <h3 class="py-3">Users List</h3>
     <p>Here you can see all users</p>
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table">
             <thead>
-            <tr>
-                <th>#</th>
-                <th>Login</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Group</th>
-            </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Group</th>
+                    <th scope="col">More</th>
+                    <th scope="col">Delete</th>
+                </tr>
             </thead>
             <tbody>
                 {{#each appusers}}
-                <tr>
-                    <td></td>
-                    <td>{{login}}</td>
+                <tr>   
+                    <th scope="col">#</th>
+                    <td><a href="/user/{{_id}}">{{login}}</a></td>
                     <td>{{firstName}}</td>
                     <td>{{lastName}}</td>
-                    <td></td>
-                    <td><a href="/user/{{_id}}" class="btn btn-primary more pull-right">Więcej</a></td>
-                    <td><button type="button" class="btn btn-primary deleteUser"><i class="glyphicon glyphicon-trash"></i> Delete</button></td>
+                    <td><a href='/group/{{group._id}}'>{{group.name}}</a></td>                                         
+                    <td><a href="/user/{{_id}}" class="btn btn-primary more pull-right">More</a></td>
+                    <td><button type="button" class="btn btn-danger deleteUser">Delete</button></td>                
                 </tr>
                 {{/each}}                                                   
             </tbody>           
         </table>
-
-        {{#each group}}
-            {{_id}}-{{name}}
-        {{/each}}
     </div>	
 </template>

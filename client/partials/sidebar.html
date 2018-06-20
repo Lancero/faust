@@ -1,21 +1,26 @@
 <template name='sidebar'>   
-    <aside class="sidebar">
-        <ul class="nav nav-sidebar">
-            <li class="active"><a href="/dashboard">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="/add-user">Add User</a></li>
-            <li><a href="/users-list">Users List</a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-            <li><a href="/add-group">New Group</a></li>
-            <li><a href="/lists">Groups</a></li>
-            <li class="hidden"><a href="">One more nav</a></li>
-            <li class="hidden"><a href="">Another nav item</a></li>
-            <li class="hidden"><a href="">More navigation</a></li>
-        </ul>
-        <ul class="nav nav-sidebar hidden">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-        </ul>
+    <aside>
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+            <a href="#" class="navbar-brand"></a>
+            <div class="collapse navbar-collapse flex-column">
+                <ul id='sidebar-menu' class="navbar-nav d-block text-left w-100 pb-5 pt-5">
+                    <li class="nav-item"><a href="/users-list" class="nav-link px-3">users list</a></li>
+                    <li class="nav-item"><a href="/add-user" class="nav-link px-3">add new user</a></li>
+                    <li class="nav-item"><a href="/lists" class="nav-link px-3">groups</a></li>                    
+                    <li class="nav-item"><a href="/add-group" class="nav-link px-3">add new group</a></li>
+                    
+                </ul>
+                
+                <div class="d-none d-lg-block w-100">
+                    <span class="text-small text-muted">Quick links</span>  
+                    <ul id='sidebar-shortcuts' class="nav nav-small flex-column mt-2 ">
+                        <li class="nav-item"><a href="" class="nav-link">Our Team</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Project</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Task</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Board</a></li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
     </aside>
 </template>

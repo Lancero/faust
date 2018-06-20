@@ -1,3 +1,52 @@
 body {
-  background-color: #888;
+  background-color: #2d373c;
+  color: #f8f9fa;
+}
+.bg-dark hr {
+  border-color: rgba(255,255,255,.1);
+}
+#home-show{
+  background-image: url('../img/kuala-lumpur.jpg');
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+}
+#home-show .dark-overlay {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  min-height: 800px;
+  background: rgba(0, 0, 0, 0.3);
+}
+#home-product-info{
+  border-top: 5px solid #28a745;
+}
+#main-container {
+  margin-top: 60px;
+}
+#main-navbar {
+  border-bottom: 2px solid #28a745;
+}
+#sidebar-menu > li > a{
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: all .4s;
+  border: 1px solid #28a745;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#sidebar-menu > li > a:hover {
+  background: #28a745;
+}
+#sidebar-shortcuts > li > a {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+  padding: 0.25rem;
+  border-bottom: 1px solid transparent;
+}
+#sidebar-shortcuts > li > a:hover {
+  border-bottom: 1px solid #28a745;
+  transition: all .4s;
 }
