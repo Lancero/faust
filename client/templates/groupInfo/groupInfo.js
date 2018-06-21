@@ -12,8 +12,12 @@ Template.groupInfo.helpers({
         // let usersMap = Groups.map(function(item){
         //     return item.id;
         // });
-        console.log(groupUserId); // ID Grupy
-        console.log(usersArr);
+
+
+        //console.log(groupUserId); // ID Grupy
+        //console.log(usersArr);
+
+
         //console.log(Groups.findOne(groupUserId).sysUsersId); // ID usera z podanej grupy
         //console.log(Groups.findOne(groupUserId)); 
         //console.log(sysUsersId);

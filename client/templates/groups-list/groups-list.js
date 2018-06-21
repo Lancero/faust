@@ -1,4 +1,4 @@
-Template.lists.helpers({
+Template.groupsList.helpers({
     groups: function(){
       return AppGroups.find();
     },
@@ -6,7 +6,7 @@ Template.lists.helpers({
         return SysUsers.find();
     }
 });
-Template.lists.events({
+Template.groupsList.events({
     'submit #userListForm': function(event){
         
         let listId = event.target.userListSelect.value;

@@ -1,0 +1,28 @@
+<template name='groupsList'>
+    <h2 class="sub-header">Groups List</h2>
+    <p>Here you can see all users</p>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>                                    
+                    <th scope="col">More</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each groups}}
+                <tr>   
+                    <th scope="col">{{@index}}</th>
+                    <td>{{name}} </td>                    
+                    <td><a href="/group/{{_id}}" class="btn btn-primary more ">Open</a></td>  
+                    <td><button type="button" class="btn btn-primary deleteGroup"> Delete</button></td>                                   
+                </tr>
+                {{/each}}                                                   
+            </tbody>           
+        </table>
+    </div>	
+    
+</template>

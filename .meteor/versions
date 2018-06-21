@@ -8,6 +8,7 @@ aldeed:collection2-core@1.2.0
 aldeed:schema-deny@1.1.0
 aldeed:schema-index@1.1.1
 aldeed:simple-schema@1.5.4
+alexwine:bootstrap-4@4.1.0
 allow-deny@1.0.5
 autopublish@1.0.7
 autoupdate@1.2.11
@@ -91,7 +92,6 @@ standard-minifier-js@1.2.0
 templating@1.1.14
 templating-tools@1.0.4
 tracker@1.1.0
-twbs:bootstrap@3.3.6
 ui@1.0.11
 underscore@1.0.9
 url@1.0.10

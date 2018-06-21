@@ -1,13 +1,18 @@
 body {
-  background-color: #2d373c;
+  background-color: #2f353a;
   color: #f8f9fa;
 }
 .bg-dark hr {
   border-color: rgba(255,255,255,.1);
 }
 #home-show{
-  background-image: url('../img/kuala-lumpur.jpg');
+  background-image: url('../img/kuala-lumpur.jpg');  
   min-height: 800px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   display: flex;
   align-items: center;
 }
@@ -49,4 +54,9 @@ body {
 #sidebar-shortcuts > li > a:hover {
   border-bottom: 1px solid #28a745;
   transition: all .4s;
+}
+table {
+  background: #3a4149;
+  border-color: #23282c;
+  
 }

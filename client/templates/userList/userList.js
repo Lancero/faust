@@ -10,7 +10,11 @@ Template.userList.helpers({
     },
     group: function(){
       return AppGroups.findOne({users: this._id});  
+    },
+    number: function(){
+      
     }
+
 });
 
 

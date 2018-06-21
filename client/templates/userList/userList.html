@@ -17,7 +17,7 @@
             <tbody>
                 {{#each appusers}}
                 <tr>   
-                    <th scope="col">#</th>
+                    <th scope="col">{{@index}}</th>
                     <td><a href="/user/{{_id}}">{{login}}</a></td>
                     <td>{{firstName}}</td>
                     <td>{{lastName}}</td>
